@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Motors</title>
+
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <a href="index.html" class="header__logo-link"><img class="header__logo" src="images/logo.png" alt="header logo"></a>
+        <nav class="header__navigation">
+          <ul class="header__navigation-list">
+            <li class="header__navigation-list--item"><a class="header__navigation-list--link" href="index.html">УСЛУГИ</a>
+            </li>
+            <li class="header__navigation-list--item"><a class="header__navigation-list--link" href="index.html">МАРКИ
+                АВТО</a>
+            </li>
+            <li class="header__navigation-list--item"><a class="header__navigation-list--link" href="index.html">ЗАЯВКИ
+                НА
+                ВЫКУП</a></li>
+            <li class="header__navigation-list--item"><a class="header__navigation-list--link" style="color: #00b630;" href="review.html">ОСТАВИТЬ
+                ОТЗЫВ</a>
+            </li>
+            <li class="header__navigation-list--item"><a class="header__navigation-list--link" href="#contacts">КОНТАКТЫ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__location">
+          <img class="header__location-images" src="images/location-img.png" alt="location">
+          <div class="header__location-names">
+            <p class="header__location-name">Санкт-Петербург</p>
+            <span class="header__location-name">и Ленинградская обл.</span>
+          </div>
+        </div>
+        <div class="header__contacts">
+          <a title="Telegram" href="tg://resolve?domain=vamedva" class="header__contacts-telegram--link"><img class="header__contacts-telegram" src="images/telegram-logo.png" alt="telegram"></a>
+          <a title="Viber" href="viber://chat?number=+78001251551" class="header__contacts-viber--link"><img class="header__contacts-viber" src="images/viber-logo.png" alt="viber"></a>
+          <div class="header__contacts-phone">
+            <a class="header__contacts-phone--number" href="tel:78001251551">+7 (800) 125-15-51</a>
+            <a data-fancybox data-src="#hidden-content" href="javascript:;" class="header__contacts-phone--link popup-link">Заказать звонок</a>
+          </div>
+        </div>
+        <div class="header__burger">
+          <span></span>
+        </div>
+        <div id="hidden-content" class="header-popup">
+          <div class="header-popup__body">
+            <div class="header-popup__content">
+              <a class="header-popup__close" data-fancybox-close href="#header"></a>
+              <h4 class="header-popup__text title__item">Мы вам перезвоним в течении 3 минут</h4>
+              <form id="form" class="header-poput__form" action="send.php" method="post">
+                <input class="header__form-name review__input form__input" name="fio" type="text" placeholder="Ваше имя" required>
+                <input class="header__form-phone  form__input" name="phone" data-rule-minlength="10" data-rule-required="true" data-msg="" type="tel" placeholder="Ваш телефон">
+                <div class="g-recaptcha" data-sitekey="6LdmfUkaAAAAAF99HeAjYiVyOMvjXFRNXAOO-ZXK"></div>
+                <button onclick="$.fancybox.close();" type="submit" class="review-page__form-btn application__form-inner--btn">Заказать
+                  звонок</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="review-page">
+    <div class="container">
+      <div class="review-page__wrapper">
+        <div class="review-page__items">
+          <h4 class="review-page__title title__item">Оставить отзыв о компании Моторс</h4>
+          <p class="review-page__text">Оставьте, пожулйста, свой отзыв о нашей компании.
+            Мы стараемся улучшить наш сервис по выкупу автомобилей и
+            нам важно Ваше мнение.</p>
+          <p class="review-page__text">Все сообщения проходят обязательную премодерацию во
+            избежание спама и нарушения законодательства РФ.
+            Спасибо за понимание.</p>
+          <p class="review-page__text">Никакие личные данные не будут разглашены или
+            переданы третьим лицам.</p>
+        </div>
+        <form class="review-page__form" action="#">
+          <div class="review-page__form-item">
+            <input class="review-page__form-name form-control review__input form__input" type="text" required>
+            <div class="placeholder">Ваше имя<span class="red">*</span></div>
+          </div>
+          <div class="review-page__form-item">
+            <input class="review-page__form-email form-control review__input form__input" type="text" required>
+            <div class="placeholder">Ваша почта<span class="red">*</span></div>
+          </div>
+          <div class="review-page__form-item">
+            <input class="review-page__form-brand form-control review__input form__input" type="text" required>
+            <div class="placeholder">Марка и модель вашего автомобиля</div>
+          </div>
+          <div class="review-page__form-item">
+            <textarea class="review-page__form-inner form-control" name="textarea" cols="30" rows="10" required></textarea>
+            <div class="placeholder-2">Ваш отзыв<span class="red">*</span></div>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LdmfUkaAAAAAF99HeAjYiVyOMvjXFRNXAOO-ZXK"></div>
+          <button type="submit" class="review-page__form-btn application__form-inner--btn">Отправить отзыв</button>
+        </form>
+        <div id="popup" class="popup">
+          <div class="popup__body">
+            <div class="popup__content">
+              <a class="popup__close close-popup" href="#"></a>
+              <h4 class="popup__text title__item">Благодарим за отзыв!</h4>
+              <p class="popup__text title__item">После модерации <span>он появится на нашем сайте!</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="contacts" class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__items">
+          <div class="footer__item">
+            <img class="footer__item-logo" src="images/logo.png" alt="header logo">
+            <p class="footer__item-text">Покупаем все автомобили в
+              любом состоянии и любого
+              года выпуска. Расчет сразу!</p>
+            <p class="footer__item-copyright">©Copyright 2012-2021</p>
+          </div>
+          <div class="footer__item">
+            <ul class="footer__item-inner">
+              <li class="footer__item-inner--title title__item">Услуги</li>
+              <li class="footer__item-inner--list">Выкуп авто с пробегом</li>
+              <li class="footer__item-inner--list">Выкуп битых авто</li>
+              <li class="footer__item-inner--list">Выкуп неисправных авто</li>
+              <li class="footer__item-inner--list">Выкуп авто после ДТП</li>
+              <li class="footer__item-inner--list">Выкуп авто в кредите</li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <div class="footer__item-location">
+              <img class="footer__item-location--images" src="images/location-img.png" alt="location">
+              <div class="footer__item-location--names">
+                <p class="footer__item-location--name">Санкт-Петербург</p>
+                <span class="footer__item-location--name">и Ленинградская обл.</span>
+              </div>
+            </div>
+            <div class="footer__item-contacts">
+              <a title="Telegram" href="tg://resolve?domain=vamedva" class="header__contacts-telegram--link"><img class="header__contacts-telegram" src="images/telegram-logo.png" alt="telegram"></a>
+              <a title="Viber" href="viber://chat?number=+78001251551" class="header__contacts-viber--link"><img class="header__contacts-viber" src="images/viber-logo.png" alt="viber"></a>
+              <div class="footer__item-contacts--phone">
+                <a class="footer__item-contacts--phone-number" href="tel:78001251551">+7 (800) 125-15-51</a>
+                <a data-fancybox data-src="#hidden-content" href="javascript:;" class="header__contacts-phone--link popup-link">Заказать звонок</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__item">
+            <div class="footer__item-social">
+              <h4 class="footer__item-social--title title__item">Мы в соц. сетях</h4>
+              <a class="footer__item-social--link" href="#"><img class="footer__item-social--link-images" src="images/social-1.png" alt="vk"></a>
+              <a class="footer__item-social--link" href="#"><img class="footer__item-social--link-images" src="images/social-2.png" alt="facebook"></a>
+              <a class="footer__item-social--link" href="#"><img class="footer__item-social--link-images" src="images/social-3.png" alt="youtube"></a>
+              <a class="footer__item-social--link" href="#"><img class="footer__item-social--link-images" src="images/social-4.png" alt="instagram"></a>
+            </div>
+            <div class="footer__item-maps">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d511624.0941974494!2d29.534295059538795!3d59.93991393145808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696378cc74a65ed%3A0x6dc7673fab848eff!2z0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsINCg0L7RgdGB0LjRjw!5e0!3m2!1sru!2sua!4v1611951755277!5m2!1sru!2sua" width="282" height="95" style="border:0; border-radius: 8px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+  <script src="js/readmore.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/number.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
